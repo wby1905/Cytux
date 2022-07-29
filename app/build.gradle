@@ -1,0 +1,96 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 29
+
+    packagingOptions {
+        pickFirst 'lib/x86/libsoundtouch.so'
+        pickFirst 'lib/arm64-v8a/libsoundtouch.so'
+        pickFirst 'lib/armeabi-v7a/libsoundtouch.so'
+        pickFirst 'lib/x86_64/libsoundtouch.so'
+    }
+
+    defaultConfig {
+        applicationId "cufe.wby.cytux"
+        minSdkVersion 24
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        externalNativeBuild.ndkBuild {
+            arguments "NDK_APPLICATION=main/src/jni/Application.mk",
+                    "APP_ALLOW_MISSING_DEPS:=true"
+        }
+
+        ndk {
+            moduleName "soundtouch"
+            stl "stlport_static"
+            ldLibs "log"
+        }
+    }
+
+
+    sourceSets {
+        main {
+            manifest.srcFile "./src/main/AndroidManifest.xml"
+            java.srcDirs = ["./src/main/java"]
+            res.srcDirs = ["src/main/res"]
+            jni.srcDirs = ['libs']
+
+        }
+    }
+
+    buildTypes {
+        debug {
+            jniDebuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+    }
+    ndkVersion '21.1.6352462'
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+
+dependencies {
+
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'//万能适配器
+    implementation 'com.github.anzaizai:EasySwipeMenuLayout:1.1.4'//滑动菜单
+    implementation 'com.github.adrielcafe:AndroidAudioConverter:0.0.8'//音频转换器
+//    implementation 'com.writingminds:FFmpegAndroid:0.3.2'//ffmpeg
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation 'org.jetbrains:annotations:15.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    testImplementation 'junit:junit:[4,5)'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+

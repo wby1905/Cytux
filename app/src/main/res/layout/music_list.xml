@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rc_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_10">
+
+    <com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout
+        android:id="@+id/rc_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentView="@+id/rc_content"
+        app:rightMenuView="@+id/start_config">
+
+        <!--    用于封面、歌曲名以及时长-->
+        <Button
+            android:id="@+id/start_config"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="开始"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18" />
+
+        <!--        用于点击之后侧滑弹出开始按钮-->
+        <LinearLayout
+            android:id="@+id/rc_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#37496AE4"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/cover"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/name_and_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_50"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="@dimen/sp_18" />
+        </LinearLayout>
+
+
+    </com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout>
+</LinearLayout>

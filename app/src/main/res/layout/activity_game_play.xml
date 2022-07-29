@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://
+    schemas.android.com/apk/res-auto"
+    android:id="@+id/game_play"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/play_background">
+
+    <Button
+        android:id="@+id/pause"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_15"
+        android:background="@drawable/pause"
+        android:gravity="center"
+        android:text="| |"
+        android:textColor="#C8FFFFFF"
+        android:textSize="@dimen/sp_12"><!--android:text=" △" android:rotation="90"-->
+    </Button>
+
+    <TextView
+        android:id="@+id/combo"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/sp_25"
+        android:gravity="center_horizontal"
+        android:clickable="false"
+        android:focusable="false"/>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:text="0000000"
+        android:clickable="false"
+        android:focusable="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_20" />
+
+    <cufe.wby.cytux.Views.BPMLine
+        android:id="@+id/bpmLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/dp_2"
+        android:translationZ="999dp"/>
+
+</RelativeLayout>

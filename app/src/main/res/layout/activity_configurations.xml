@@ -1,0 +1,194 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/choosing_background"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_10"
+            android:text="难度"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20" />
+
+        <RadioGroup
+            android:id="@+id/difficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/easy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:buttonTint="@color/white"
+                android:checked="true"
+                android:text="易"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15" />
+
+            <RadioButton
+                android:id="@+id/hard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:buttonTint="@color/white"
+                android:text="难"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_10"
+            android:text="节点"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20" />
+
+        <RadioGroup
+            android:id="@+id/size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:buttonTint="@color/white"
+                android:checked="true"
+                android:text="小"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15" />
+
+            <RadioButton
+                android:id="@+id/big"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:buttonTint="@color/white"
+                android:text="大"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_10"
+            android:text="音效"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"/>
+
+        <RadioGroup
+            android:id="@+id/soundFx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/no_fx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:buttonTint="@color/white"
+                android:checked="true"
+                android:text="无"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"/>
+
+            <RadioButton
+                android:id="@+id/has_fx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:buttonTint="@color/white"
+                android:text="有"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:baselineAligned="false">
+    <Button
+                android:id="@+id/start_game"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="START" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进度条"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/white"
+        />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:layout_marginBottom="@dimen/dp_10"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:id="@+id/progressBar">
+    </ProgressBar>
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/process"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="等待开始"
+            android:textColor="@color/white" />
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>
